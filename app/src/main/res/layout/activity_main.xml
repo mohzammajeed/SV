@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBg"
+    android:orientation="vertical">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="18dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/logo_small" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/infoBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_info_btn"
+            android:contentDescription="@string/about_title"
+            android:padding="10dp"
+            android:src="@drawable/ic_info" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Video card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:elevation="6dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <Button
+                    android:id="@+id/pickBtn"
+                    style="@style/AppButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_pick"
+                    android:drawableStart="@drawable/ic_video"
+                    android:text="Choose video" />
+
+                <TextView
+                    android:id="@+id/infoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="No video selected"
+                    android:textColor="@color/textSoft"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!-- Quality card (the group itself is the card) -->
+            <RadioGroup
+                android:id="@+id/qualityGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_card"
+                android:elevation="6dp"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <RadioButton
+                    android:id="@+id/qLow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple"
+                    android:minHeight="48dp"
+                    android:text="Low — smallest file (480p)"
+                    android:textColor="@color/textDark" />
+
+                <RadioButton
+                    android:id="@+id/qMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple"
+                    android:checked="true"
+                    android:minHeight="48dp"
+                    android:text="Medium — balanced (720p)"
+                    android:textColor="@color/textDark" />
+
+                <RadioButton
+                    android:id="@+id/qHigh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple"
+                    android:minHeight="48dp"
+                    android:text="High — best quality (1080p)"
+                    android:textColor="@color/textDark" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/startBtn"
+                style="@style/AppButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_btn_start"
+                android:drawableStart="@drawable/ic_compress"
+                android:enabled="false"
+                android:text="Compress" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progressBackgroundTint="@color/progressTrack"
+                android:progressTint="@color/purple"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cancelBtn"
+                style="@style/AppButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_btn_cancel"
+                android:drawableStart="@drawable/ic_close"
+                android:text="Cancel"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/textDark"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/AppButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_btn_save"
+                android:drawableStart="@drawable/ic_save"
+                android:text="Save"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/shareBtn"
+                style="@style/AppButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_btn_share"
+                android:drawableStart="@drawable/ic_share"
+                android:text="Share"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

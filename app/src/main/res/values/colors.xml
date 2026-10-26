@@ -1,0 +1,11 @@
+<resources>
+    <color name="colorPrimary">#6C4CD6</color>
+    <color name="colorPrimaryDark">#4A2FB0</color>
+    <color name="colorAccent">#FF6B9D</color>
+    <color name="white">#FFFFFF</color>
+    <color name="pageBg">#F1EEFF</color>
+    <color name="textDark">#1E1B3A</color>
+    <color name="textSoft">#5E5A80</color>
+    <color name="purple">#7C4DFF</color>
+    <color name="progressTrack">#DDD6FF</color>
+</resources>
